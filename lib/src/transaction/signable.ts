@@ -350,10 +350,12 @@ const makeLegacyAminoSignDoc = (
     sequence: number | string,
     timeoutHeight?: string,
 ): Bytes => {
+    console.log(`0`)
     let encodedTimeoutHeight: string | undefined;
     if (typeof timeoutHeight !== 'undefined') {
         encodedTimeoutHeight = legacyAmino.Uint53.fromString(timeoutHeight.toString()).toString();
     }
+    console.log(`1`)
 
     const stdSignDocBase: legacyAmino.StdSignDoc = {
         chain_id: chainId,
@@ -363,6 +365,7 @@ const makeLegacyAminoSignDoc = (
         msgs,
         memo,
     };
+    console.log(`2`)
     let stdSignDoc: legacyAmino.StdSignDoc;
     if (typeof timeoutHeight === 'undefined') {
         stdSignDoc = {
@@ -374,5 +377,6 @@ const makeLegacyAminoSignDoc = (
             timeout_height: encodedTimeoutHeight,
         };
     }
+    console.log(`3`)
     return Bytes.fromUint8Array(legacyAmino.toUtf8(legacyAmino.sortedJsonStringify(stdSignDoc)));
 };

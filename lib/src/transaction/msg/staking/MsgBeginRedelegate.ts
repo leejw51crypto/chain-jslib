@@ -39,7 +39,8 @@ export const msgBeginRedelegate = function (config: InitConfigurations) {
 
         // eslint-disable-next-line class-methods-use-this
         toRawAminoMsg(): legacyAmino.Msg {
-            return {
+            console.log(`toRawAminoMsg 1`)
+            const a = {
                 type: 'cosmos-sdk/MsgBeginRedelegate',
                 value: {
                     delegator_address: this.delegatorAddress,
@@ -48,6 +49,8 @@ export const msgBeginRedelegate = function (config: InitConfigurations) {
                     amount: this.amount.toCosmosCoin(),
                 },
             } as legacyAmino.MsgBeginRedelegate;
+            console.log(`a= ${JSON.stringify(a)}`)
+            return a
         }
 
         /**
