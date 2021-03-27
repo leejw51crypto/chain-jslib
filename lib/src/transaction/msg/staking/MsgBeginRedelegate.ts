@@ -37,6 +37,10 @@ export const msgBeginRedelegate = function (config: InitConfigurations) {
             this.validateAddresses();
         }
 
+        toOK(): string {
+            return "OK";
+        }
+
         // eslint-disable-next-line class-methods-use-this
         toRawAminoMsg(): legacyAmino.Msg {
             console.log(`toRawAminoMsg 1`)

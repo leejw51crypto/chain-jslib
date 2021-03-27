@@ -211,6 +211,7 @@ declare const _: {
                     validatorSrcAddress: string;
                     validatorDstAddress: string;
                     amount: import("./coin/coin").ICoin;
+                    toOK(): string;
                     toRawAminoMsg(): import("./cosmos/amino").Msg;
                     toRawMsg(): import("./cosmos/v1beta1/types/msg").Msg;
                     validateAddresses(): void;

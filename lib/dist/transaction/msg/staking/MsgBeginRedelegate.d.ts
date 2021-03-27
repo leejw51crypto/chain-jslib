@@ -8,6 +8,7 @@ export declare const msgBeginRedelegate: (config: InitConfigurations) => {
         validatorSrcAddress: string;
         validatorDstAddress: string;
         amount: ICoin;
+        toOK(): string;
         toRawAminoMsg(): legacyAmino.Msg;
         toRawMsg(): Msg;
         validateAddresses(): void;
